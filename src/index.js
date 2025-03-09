@@ -6,12 +6,16 @@ import reportWebVitals from './reportWebVitals';
 import { Usercontextprovider } from './context/stateprovider';
 import { initialstate } from './context/initialstate';
 import reducer from './context/reducer';
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   
     <Usercontextprovider initialstate={initialstate} reducer={reducer}>
-    <App/>
+    <BrowserRouter>
+      <App/>
+    </BrowserRouter>
+
     </Usercontextprovider>
   
 

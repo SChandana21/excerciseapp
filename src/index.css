@@ -44,7 +44,7 @@ code {
 }
 
 .logo2{
-  width: 20px;
+  width: 30px;
   align-items: center;
 }
 
@@ -200,6 +200,33 @@ h1 {
 .coachesmain h1 {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
+}
+
+.dropdown {
+  width: 150px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 30px;
+  right: 13px;
+  padding-left:20px;
+  padding-right: 20px;
+  background-color: white;
+}
+
+.dropdown p {
+  display: flex;
+  font-family:"Poppins", sans-serif;
+  align-items: center;
+  gap: 2px;
+  overflow: hidden; 
+  cursor: pointer;
+  padding: 5px 5px 5px 5px;
+
+}
+
+.dropdown p:hover{
+  background-color: rgb(247, 27, 27);
 }
 
 

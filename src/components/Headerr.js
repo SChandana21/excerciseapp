@@ -4,23 +4,44 @@ import { app } from './firebase.config';
 import { useStatevalue } from '../context/stateprovider';
 import { actiontype } from '../context/reducer';
 import avatar from './avatar.png';
+import { PiSignOutThin } from "react-icons/pi";
+import { AiOutlineProfile } from "react-icons/ai";
+import { FaBook } from "react-icons/fa";
+import { CgGym } from "react-icons/cg";
+import { TfiMoney } from "react-icons/tfi";
+import { Link } from 'react-router-dom';
+
+
+
+
+
+
+
 
 const Headerr = () => {
+
+const [menu, setmenu] = useState(false);
 
     const firebaseauth = getAuth(app);
     const provider = new GoogleAuthProvider();
 
     const [{user}, dispatch] = useStatevalue()
 
+
+
     const login = async() => {
-      const {user:{refreshToken, providerData}} = await signInWithPopup(firebaseauth, provider);
+      if (!user) {
+        const {user:{refreshToken, providerData}} = await signInWithPopup(firebaseauth, provider);
       dispatch({
         type: actiontype.SET_USER,
         user: providerData[0]
       })
       localStorage.setItem('user', JSON.stringify(providerData[0]));
 
+    } else {
+      setmenu(!menu);
     }
+      }
 
 
   
@@ -36,8 +57,17 @@ const Headerr = () => {
       </ul>
       <div className='icons'>
       <img src={user ? user.photoURL :avatar} alt='text' className='logo2' onClick={login}/>
+      {menu && (
+        <div className='dropdown'>
+      <Link to="/Profile"><p>Your profile</p></Link>
+      <p>Calorie Tracker </p>
+      <p>Excercise Tracker</p>
+      <p>Subscriptions</p>
+      <p>Log out 
+      <PiSignOutThin/>
+      </p>
+      </div>)}
       </div>
-
       
     </div>
   )
