@@ -1,4 +1,7 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+body {  
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -13,7 +16,8 @@ code {
 }
 
 .logo{
-  height: 80px;
+  width: 80px;
+  height: 90px;
 }
 
 .header{
@@ -21,40 +25,48 @@ code {
   align-items: center;
   justify-content: space-between;
   justify-items: center;
+  height: 50px;
+  
 }
 
 .header ul {
   display: flex;
   flex-direction: row;
-  gap: 25px; 
+  gap: 30px; 
   color: black;
   align-items: center;
 }
 
 .header li {
   list-style: none;
+  font-weight:400;
+  font-family: "Poppins", sans-serif;
 }
 
 .logo2{
   width: 20px;
+  align-items: center;
 }
 
 .icons{
   margin-right: 70px;
+  align-items: center;
+  justify-items: center;
 
 }
 
 .homecontainer{
   width: 100vw;
   height: auto;
-  margin-top: 40px;
-  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 5px;
   box-shadow: black;
 }
 
 .banner {
   width: 100%;
-  height: fit-content;
+  height: auto;
+  box-shadow: 10 10 10 black;
   
   
 
@@ -75,6 +87,8 @@ h1 {
   width: 100%;
   text-align: center;
   padding: 20px 0;
+  font-family: "Poppins", sans-serif;
+  
 }
 
 /* Styling for the list items ("Bodyweight", "Strength", "Cardio") */
@@ -110,6 +124,7 @@ h1 {
 /* Text below the image */
 .productcontainer p {
   font-size: 16px;
+  font-family: "Poppins", sans-serif;
    
 }
 
@@ -131,6 +146,7 @@ h1 {
   cursor: pointer;
   border-radius: 15px;
   font-weight: bold;
+  font-family: "Poppins", sans-serif;
 }
 
 
@@ -172,11 +188,18 @@ h1 {
 
 .media-element h3 {
   font-style: italic;
+  font-family: "Poppins", sans-serif;
 }
 
 .media-element h4 {
   font-weight: 100;
   font-style: italic;
+  font-family: "Poppins", sans-serif;
+}
+
+.coachesmain h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
 }
 
 

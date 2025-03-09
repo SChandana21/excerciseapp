@@ -1,9 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { app } from './firebase.config';
+import { useStatevalue } from '../context/stateprovider';
+import { actiontype } from '../context/reducer';
+import avatar from './avatar.png';
 
 const Headerr = () => {
+
+    const firebaseauth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+
+    const [{user}, dispatch] = useStatevalue()
+
+    const login = async() => {
+      const {user:{refreshToken, providerData}} = await signInWithPopup(firebaseauth, provider);
+      dispatch({
+        type: actiontype.SET_USER,
+        user: providerData[0]
+      })
+      localStorage.setItem('user', JSON.stringify(providerData[0]));
+
+    }
+
+
+  
+
   return (
     <div className='header'>
-      <img src='https://static.vecteezy.com/system/resources/previews/005/696/172/non_2x/green-fitness-logo-gym-logo-vector.jpg' alt='Text' className='logo'/>
+      <img src='https://marketplace.canva.com/EAFMWRbCRm0/1/0/1600w/canva-red-black-minimalist-fitness-logo-dcYVFBq4DTg.jpg' alt='Text' className='logo'/>
       <ul>
         <li>Home</li>
         <li>Excercises</li>
@@ -11,8 +35,7 @@ const Headerr = () => {
         <li>Our Program</li>
       </ul>
       <div className='icons'>
-      <img src='https://www.iconpacks.net/icons/1/free-facebook-icon-90-thumb.png' className='logo2'/>
-      <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/YouTube_social_dark_square_%282017%29.svg/300px-YouTube_social_dark_square_%282017%29.svg.png' className='logo2'/>
+      <img src={user ? user.photoURL :avatar} alt='text' className='logo2' onClick={login}/>
       </div>
 
       
@@ -21,3 +44,4 @@ const Headerr = () => {
 }
 
 export default Headerr
+

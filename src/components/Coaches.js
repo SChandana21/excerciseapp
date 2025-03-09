@@ -4,7 +4,7 @@ import pictureagain from './fitnesscoach2.jpg';
 
 const Coaches = () => {
   return (
-    <div>
+    <div className='coachesmain'>
         <h1>Meet the Coaches</h1>
       <div className='media-scroller'>
         <div className='media-element'>
