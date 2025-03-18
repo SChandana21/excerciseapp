@@ -244,7 +244,7 @@ h1 {
 
 
 .item-2 {
-  background-color: azure;
+  /*background-color: azure;*/
 }
 
 .headersec {
@@ -304,12 +304,16 @@ h1 {
   
 }
 
-.itemcontainer button {
-  
+.itemdesc button {
   width: 30px;
-  height: 20px;
-  background-color: white;
-
+  height: 30px;
+  background-color: #f72c2c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .itemcontainer p {
@@ -320,8 +324,7 @@ h1 {
 .itemcontainer {
   margin-top: 5%;
   justify-content: space-between;
-  border-style:solid;
-  border-color: rgb(201, 201, 201);
+  
   /*background-color: rgba(214, 212, 212, 0.645);*/
   
   border-radius: 10px;
@@ -333,6 +336,58 @@ h1 {
   justify-content:space-between;
   align-items: center;
 }
+
+
+/* Popup container styling */
+
+
+.popupwindow {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  
+}
+
+.popupwindow p {
+  font-family:"Poppins", sans-serif;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.popupwindow input {
+  height: 30px;
+}
+
+/* Popup window styling */
+.popup {
+  background-color: rgba(128, 128, 128, 0.616);
+  position: absolute;
+  padding: 15px;
+  top: 35%;
+  left: 38%;
+  
+   
+}
+
+.closeicon {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.popup button {
+  width: 50px;
+  margin-left: 45%;
+  padding: 5px;
+  font-family:"Poppins", sans-serif;
+  color: white;
+  background-color: red;
+  cursor: pointer;
+  margin-top: 2%;
+  
+}
+
+
+
 
 
 

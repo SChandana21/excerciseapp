@@ -10,6 +10,7 @@ import { FaBook } from "react-icons/fa";
 import { CgGym } from "react-icons/cg";
 import { TfiMoney } from "react-icons/tfi";
 import { Link } from 'react-router-dom';
+import Homecontainer from './Homecontainer';
 
 
 
@@ -56,7 +57,7 @@ const [menu, setmenu] = useState(false);
         <li>Our Program</li>
       </ul>
       <div className='icons'>
-      <img src={user ? user.photoURL :avatar} alt='text' className='logo2' onClick={login}/>
+      <img  src={user ? user.photoURL :avatar} alt='text' className='logo2' onClick={login}/>
       {menu && (
         <div className='dropdown'>
       <Link to="/Profile"><p>Your profile</p></Link>
